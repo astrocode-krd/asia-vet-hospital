@@ -204,17 +204,23 @@ const translations = {
     }
 };
 
-const langToggle = document.getElementById('lang-toggle');
-if (langToggle) {
-    const savedLang = localStorage.getItem('siteLang') || 'en';
-    langToggle.value = savedLang;
-    applyLanguage(savedLang);
+// --- REPLACE THIS SECTION IN APP.JS ---
+const langToggles = [document.getElementById('lang-toggle'), document.getElementById('lang-toggle-mobile')];
+const savedLang = localStorage.getItem('siteLang') || 'en';
 
-    langToggle.addEventListener('change', (e) => {
-        localStorage.setItem('siteLang', e.target.value);
-        applyLanguage(e.target.value);
-    });
-}
+applyLanguage(savedLang);
+
+langToggles.forEach(toggle => {
+    if (toggle) {
+        toggle.value = savedLang;
+        toggle.addEventListener('change', (e) => {
+            localStorage.setItem('siteLang', e.target.value);
+            langToggles.forEach(t => { if(t) t.value = e.target.value; }); // Keep both dropdowns in sync
+            applyLanguage(e.target.value);
+        });
+    }
+});
+// ---------------------------------------
 
 function applyLanguage(lang) {
     if (!translations[lang]) return;
