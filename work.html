@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Asia Veterinary Hospital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Our Work | Asia Veterinary Hospital</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -13,21 +13,34 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body class="bg-brandGray text-brandDark overflow-x-hidden flex flex-col min-h-screen">
+    
+    <!-- NAVBAR -->
     <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full top-0 z-50 border-b border-gray-100 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 md:px-12 py-3 flex justify-between items-center">
-            <a href="index.html" class="flex items-center group"><img src="logo.png" alt="Asia Vet Logo" class="h-16 w-auto object-contain transform group-hover:scale-105 transition-transform"></a>
+            <a href="index.html" class="flex items-center group">
+                <img src="logo.png" alt="Asia Vet Logo" class="h-12 md:h-16 w-auto object-contain transform group-hover:scale-105 transition-transform">
+            </a>
             <div class="hidden md:flex items-center gap-8 font-semibold text-sm">
                 <a href="index.html" class="text-gray-500 hover:text-brandGreen transition-colors" id="nav-home">Home</a>
                 <a href="services.html" class="text-gray-500 hover:text-brandGreen transition-colors" id="nav-services">Services</a>
                 <a href="tech.html" class="text-gray-500 hover:text-brandGreen transition-colors" id="nav-tech">Tech & Tests</a>
                 <a href="team.html" class="text-gray-500 hover:text-brandGreen transition-colors" id="nav-team">Our Team</a>
-                <a href="contact.html" class="text-brandGreen" id="nav-contact">Contact</a>
+                <a href="work.html" class="text-brandGreen" id="nav-work">Our Work</a>
+                <a href="contact.html" class="text-gray-500 hover:text-brandGreen transition-colors" id="nav-contact">Contact</a>
+                
                 <select id="lang-toggle" class="bg-gray-50 text-gray-700 text-xs font-bold rounded-lg px-3 py-2 border border-gray-200 outline-none cursor-pointer hover:border-brandGreen transition">
                     <option value="en">EN</option><option value="ku">KU</option><option value="ar">AR</option>
                 </select>
-                <a href="tel:07701910125" class="bg-brandDark hover:bg-brandGreen text-white px-6 py-2.5 rounded-full transition-colors shadow-md flex items-center gap-2"><i class="ph ph-phone text-lg"></i> 0770 191 0125</a>
+                <a href="tel:07701910125" class="bg-brandDark hover:bg-brandGreen text-white px-6 py-2.5 rounded-full transition-colors shadow-md flex items-center gap-2">
+                    <i class="ph ph-phone text-lg"></i> 0770 191 0125
+                </a>
             </div>
-            <button id="mobile-menu-btn" class="md:hidden text-brandDark text-3xl"><i class="ph ph-list"></i></button>
+            <div class="flex items-center gap-3 md:hidden">
+                <select id="lang-toggle-mobile" class="bg-gray-50 text-gray-700 text-xs font-bold rounded-lg px-2 py-2 border border-gray-200 outline-none cursor-pointer">
+                    <option value="en">EN</option><option value="ku">KU</option><option value="ar">AR</option>
+                </select>
+                <button id="mobile-menu-btn" class="text-brandDark text-3xl"><i class="ph ph-list"></i></button>
+            </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 absolute w-full shadow-xl">
             <div class="flex flex-col gap-4 font-semibold text-lg">
@@ -35,57 +48,46 @@
                 <a href="services.html" class="text-gray-600" id="nav-services">Services</a>
                 <a href="tech.html" class="text-gray-600" id="nav-tech">Tech & Tests</a>
                 <a href="team.html" class="text-gray-600" id="nav-team">Our Team</a>
-                <a href="contact.html" class="text-brandGreen" id="nav-contact">Contact</a>
+                <a href="work.html" class="text-brandGreen" id="nav-work">Our Work</a>
+                <a href="contact.html" class="text-gray-600" id="nav-contact">Contact</a>
             </div>
         </div>
     </nav>
 
-    <main class="flex-grow pt-32 pb-24 relative z-10">
-        <div class="text-center px-6 reveal max-w-3xl mx-auto mb-16">
-            <h5 class="text-brandGreen font-bold tracking-widest uppercase text-sm mb-3" id="contact-page-tag">Get in Touch</h5>
-            <h1 class="text-5xl md:text-6xl font-extrabold text-brandDark mb-6 leading-tight" id="contact-page-title">We Are Here For You</h1>
-            <p class="text-gray-600 text-lg md:text-xl" id="contact-page-desc">Whether it's an emergency or a routine checkup, reaching us is easy.</p>
+    <main class="flex-grow pt-24 md:pt-32 pb-16 md:pb-24 relative z-10">
+        <div class="text-center px-4 md:px-6 reveal max-w-3xl mx-auto mb-12 md:mb-16">
+            <h5 class="text-brandGreen font-bold tracking-widest uppercase text-xs md:text-sm mb-3" id="work-page-tag">Gallery & News</h5>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-brandDark mb-4 md:mb-6 leading-tight" id="work-page-title">Our Success Stories</h1>
+            <p class="text-gray-600 text-base md:text-lg lg:text-xl" id="work-page-desc">See the difference expert care makes with real results, before-and-afters, and clinic news.</p>
         </div>
 
-        <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row gap-12">
-            <div class="md:w-1/3 flex flex-col gap-8 reveal">
-                <div class="bg-white rounded-3xl shadow-xl p-6 md:p-8">
-                    <h3 class="text-2xl font-bold text-brandDark mb-6 flex items-center gap-3"><i class="ph-fill ph-phone-call text-brandGreen"></i> <span id="contact-info-title">Contact Information</span></h3>
-                    <div class="space-y-6">
-                        <div>
-                            <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Phone</p>
-                            <a href="tel:07701910125" class="text-xl font-bold text-brandDark hover:text-brandGreen transition">0770 191 0125</a>
-                        </div>
-                        <div>
-                            <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Location</p>
-                            <p class="text-lg text-brandDark font-medium">Sulaymaniyah, Iraq</p>
-                        </div>
-                    </div>
+        <section class="our-work-newspaper max-w-7xl mx-auto px-6 reveal">
+            <!-- Article 1: Before and After Images -->
+            <article class="work-item">
+                <div class="media-container">
+                    <img src="outside.png" alt="Before" class="half-img bg-gray-200">
+                    <img src="inside.png" alt="After" class="half-img bg-gray-200">
                 </div>
+                <h3 class="text-xl font-bold text-brandDark mb-2" id="work1-title">Dental Cleaning Success</h3>
+                <p class="text-gray-600 text-sm leading-relaxed" id="work1-desc">A routine ultrasonic dental scaling brought this patient's smile back and prevented future gum disease.</p>
+            </article>
 
-                <div class="bg-white rounded-3xl shadow-xl p-6 md:p-8">
-                    <h3 class="text-2xl font-bold text-brandDark mb-6 flex items-center gap-3"><i class="ph-fill ph-clock text-brandGreen"></i> <span id="contact-hours-title">Operating Hours</span></h3>
-                    <div class="space-y-4 font-medium text-gray-700">
-                        <p class="flex items-center gap-2" id="hours-week"><i class="ph-bold ph-calendar-blank text-brandGreen"></i> Saturday - Thursday: 9:00 AM - 10:00 PM</p>
-                        <p class="flex items-center gap-2" id="hours-weekend"><i class="ph-bold ph-calendar-check text-brandGreen"></i> Friday: 1:00 PM - 5:00 PM</p>
-                        <div class="mt-4 p-4 bg-brandGreen/10 rounded-xl text-brandGreen font-bold flex items-center gap-3">
-                            <i class="ph-fill ph-phone-call text-2xl"></i> <span id="hours-call-note">Call us anytime during opening hours</span>
-                        </div>
-                    </div>
+            <!-- Article 2: Video Example -->
+            <article class="work-item">
+                <div class="mb-4">
+                    <video controls class="full-video bg-brandDark">
+                        <!-- Add your actual video file name here -->
+                        <source src="grooming.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
-            </div>
-
-            <div class="md:w-2/3 bg-white rounded-3xl shadow-xl p-4 overflow-hidden reveal">
-                <div class="h-[500px] w-full bg-gray-200 rounded-2xl overflow-hidden relative border-2 border-gray-100">
-                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2579.1507047728905!2d45.4370985827066!3d35.557958047054825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40002d2769a4cfb1%3A0x4f5826b596a6dfea!2sAsia%20Veterinary%20Hospital!5e0!3m2!1sen!2siq!4v1785347163161!5m2!1sen!2siq" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-lg shadow-lg font-bold text-brandDark flex items-center gap-2">
-                        <i class="ph-fill ph-map-pin text-brandGreen"></i> <span id="contact-map-title">Find Us in Sulaymaniyah</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <h3 class="text-xl font-bold text-brandDark mb-2" id="work2-t">grooming </h3>
+                <p class="text-gray-600 text-sm leading-relaxed" id="work2-desc">the work desc.</p>
+            </article>
+        </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="bg-brandDark text-white pt-16 md:pt-20 pb-8 md:pb-10 border-t-4 border-brandGreen mt-auto reveal relative overflow-hidden">
         <i class="ph-fill ph-paw-print absolute -bottom-10 -right-10 text-[10rem] md:text-[15rem] text-white/5 pointer-events-none transform -rotate-12"></i>
         <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12 mb-10 md:mb-12 relative z-10 text-center md:text-left">
