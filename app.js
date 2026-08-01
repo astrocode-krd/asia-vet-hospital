@@ -1,11 +1,26 @@
-// Paw Print Click Effect (Now bigger via CSS)
+// Paw Print Click Effect (throttled + skipped on interactive elements so it
+// doesn't pile up and make the mobile menu feel stuck)
+let lastPawTime = 0;
+let activePawCount = 0;
+const MAX_ACTIVE_PAWS = 4;
+const PAW_THROTTLE_MS = 250;
+
 document.addEventListener('click', function(e) {
+    const now = Date.now();
+    if (now - lastPawTime < PAW_THROTTLE_MS) return;
+    if (activePawCount >= MAX_ACTIVE_PAWS) return;
+    // Don't spawn a paw on top of buttons, links, or form controls —
+    // it can visually block/interfere with menu taps on mobile
+    if (e.target.closest('a, button, select, input, #mobile-menu')) return;
+
+    lastPawTime = now;
+    activePawCount++;
     const paw = document.createElement('i');
     paw.className = 'ph-fill ph-paw-print paw-click';
     paw.style.left = e.pageX + 'px';
     paw.style.top = e.pageY + 'px';
     document.body.appendChild(paw);
-    setTimeout(() => { paw.remove(); }, 800);
+    setTimeout(() => { paw.remove(); activePawCount--; }, 800);
 });
 
 const translations = {
@@ -169,8 +184,12 @@ langToggles.forEach(toggle => {
 function applyLanguage(lang) {
     if (!translations[lang]) return;
     for (const key in translations[lang]) {
-        const el = document.getElementById(key);
-        if (el) el.textContent = translations[lang][key];
+        // Some ids (like the nav links) intentionally appear twice on a page —
+        // once in the desktop nav and once in the mobile hamburger menu.
+        // getElementById only grabs the first one, so we use querySelectorAll instead
+        // to make sure every matching element gets translated.
+        const els = document.querySelectorAll('[id="' + key + '"]');
+        els.forEach(el => { el.textContent = translations[lang][key]; });
     }
 }
 

@@ -87,11 +87,24 @@ html { scroll-behavior: smooth; }
     .our-work-newspaper, .grid, .staff-grid { grid-template-columns: 1fr !important; gap: 20px; }
 
     /* Shrink giant heading fonts so they always fit small screens */
-    h1 { font-size: 2rem !important; line-height: 1.2 !important; }
-    h2 { font-size: 1.6rem !important; line-height: 1.25 !important; }
-    h3 { font-size: 1.15rem !important; }
-    h5 { font-size: 0.75rem !important; }
-    p  { font-size: 0.95rem !important; line-height: 1.55 !important; }
+    h1 { font-size: 1.85rem !important; line-height: 1.2 !important; }
+    h2 { font-size: 1.45rem !important; line-height: 1.25 !important; }
+    h3 { font-size: 1.1rem !important; }
+    h5 { font-size: 0.7rem !important; }
+    p  { font-size: 0.9rem !important; line-height: 1.5 !important; }
+
+    /* Trim the big vertical spacing Tailwind uses on desktop so pages feel
+       compact instead of oversized on a phone (matches exact class names,
+       so it never touches unrelated utility classes) */
+    .pt-32 { padding-top: 5rem !important; }
+    .pb-24 { padding-bottom: 3rem !important; }
+    .pt-24 { padding-top: 4rem !important; }
+    .pb-16 { padding-bottom: 2.5rem !important; }
+    .mb-20 { margin-bottom: 3rem !important; }
+    .mb-16 { margin-bottom: 2rem !important; }
+    .gap-24 { gap: 3rem !important; }
+    .gap-16 { gap: 2rem !important; }
+    .gap-12 { gap: 1.75rem !important; }
 
     /* Keep images, videos, cards, and embeds inside the screen */
     img, video, .work-item, .staff-card, iframe { max-width: 100% !important; box-sizing: border-box; }
@@ -110,11 +123,34 @@ html { scroll-behavior: smooth; }
     .rounded-3xl { border-radius: 1.25rem !important; }
 
     /* Give the hero section room to breathe without towering over the screen */
-    section.h-\[70vh\] { min-height: 480px !important; height: auto !important; padding-top: 2.5rem; padding-bottom: 2.5rem; }
+    section.h-\[70vh\] { min-height: 440px !important; height: auto !important; padding-top: 2rem; padding-bottom: 2rem; }
 }
 
 @media (max-width: 400px) {
-    h1 { font-size: 1.65rem !important; }
-    h2 { font-size: 1.35rem !important; }
+    h1 { font-size: 1.55rem !important; }
+    h2 { font-size: 1.3rem !important; }
     .staff-card { padding: 1rem !important; }
+}
+
+/* --- LANDSCAPE PHONE FIX ---
+   Rotating a phone sideways often makes it wider than Tailwind's 768px
+   "md" breakpoint, which was silently switching the site into its
+   desktop spacing/sizing even though it's still a small touch screen.
+   These rules key off screen HEIGHT instead, so they catch a phone in
+   landscape no matter how wide it reports itself as. */
+@media (orientation: landscape) and (max-height: 500px) {
+    h1 { font-size: 1.6rem !important; line-height: 1.2 !important; }
+    h2 { font-size: 1.3rem !important; }
+    p  { font-size: 0.85rem !important; }
+
+    /* Cap the hero so it never forces the phone to scroll just to see the button */
+    .h-\[70vh\], .md\:h-\[85vh\] { height: auto !important; }
+    .min-h-\[500px\], .md\:min-h-\[600px\] { min-height: 320px !important; }
+
+    main { padding-top: 4.5rem !important; }
+    .pt-32, .pt-24 { padding-top: 3rem !important; }
+    .pb-24, .pb-16 { padding-bottom: 2rem !important; }
+    .mb-20, .mb-16 { margin-bottom: 1.5rem !important; }
+    .gap-24 { gap: 2rem !important; }
+    nav img { height: 2.25rem !important; }
 }
