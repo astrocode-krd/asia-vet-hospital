@@ -79,9 +79,14 @@
 
             <div class="md:w-2/3 bg-white rounded-3xl shadow-xl p-4 overflow-hidden reveal">
                 <div class="h-[500px] w-full bg-gray-200 rounded-2xl overflow-hidden relative border-2 border-gray-100">
-                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2579.1507047728905!2d45.4370985827066!3d35.557958047054825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40002d2769a4cfb1%3A0x4f5826b596a6dfea!2sAsia%20Veterinary%20Hospital!5e0!3m2!1sen!2siq!4v1785347163161!5m2!1sen!2siq" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                 <iframe id="contact-map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2579.1507047728905!2d45.4370985827066!3d35.557958047054825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40002d2769a4cfb1%3A0x4f5826b596a6dfea!2sAsia%20Veterinary%20Hospital!5e0!3m2!1sen!2siq!4v1785347163161!5m2!1sen!2siq" class="w-full h-full map-frame" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                     <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-lg shadow-lg font-bold text-brandDark flex items-center gap-2">
                         <i class="ph-fill ph-map-pin text-brandGreen"></i> <span id="contact-map-title">Find Us in Sulaymaniyah</span>
+                    </div>
+                    <div id="map-tap-overlay" class="absolute inset-0 flex items-end justify-center pb-6 cursor-pointer md:hidden">
+                        <span class="bg-white/95 backdrop-blur px-4 py-2 rounded-full shadow-lg font-semibold text-brandDark text-sm flex items-center gap-2">
+                            <i class="ph-fill ph-hand-tap text-brandGreen"></i> Tap to interact with map
+                        </span>
                     </div>
                 </div>
             </div>

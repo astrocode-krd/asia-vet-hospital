@@ -201,6 +201,16 @@ if (mobileBtn && mobileMenu) {
     });
 }
 
+const mapOverlay = document.getElementById('map-tap-overlay');
+const mapFrame = document.getElementById('contact-map-frame');
+if (mapOverlay && mapFrame) {
+    mapOverlay.addEventListener('click', () => {
+        mapFrame.classList.add('map-active');
+        mapOverlay.classList.add('map-active');
+    });
+}
+
+let revealTicking = false;
 function reveal() {
     var reveals = document.querySelectorAll(".reveal");
     for (var i = 0; i < reveals.length; i++) {
@@ -213,5 +223,13 @@ function reveal() {
     }
 }
 
-window.addEventListener("scroll", reveal);
+window.addEventListener("scroll", function () {
+    if (!revealTicking) {
+        window.requestAnimationFrame(() => {
+            reveal();
+            revealTicking = false;
+        });
+        revealTicking = true;
+    }
+}, { passive: true });
 reveal();
