@@ -61,10 +61,12 @@ const translations = {
 
         /* Tech */
         "tech-page-tag": "Our Equipment", "tech-page-title": "Advanced Veterinary Technology", "tech-page-desc": "We invest in state-of-the-art medical equipment.",
-        "tech1-title": "Digital X-Ray", "tech1-desc": "High-resolution digital radiography with minimal radiation.",
-        "tech2-title": "Diagnostic Ultrasound", "tech2-desc": "Non-invasive, real-time imaging used for safe abdominal evaluations.",
-        "tech3-title": "In-House Lab", "tech3-desc": "Complete blood counts processed in minutes.",
-        "tech4-title": "Ultrasonic Dental Unit", "tech4-desc": "Advanced dental scaling and polishing equipment.",
+        "tech1-title": "CBC Analyzer", "tech1-desc": "A laboratory machine that analyzes blood samples. It measures red blood cells (RBC), white blood cells (WBC), hemoglobin, hematocrit, and platelets to help diagnose infections, anemia, and blood disorders.",
+        "tech2-title": "Biochemistry Analyzer", "tech2-desc": "An automated laboratory instrument used to measure chemicals in blood, serum, plasma, or urine, such as glucose, cholesterol, liver enzymes, kidney function markers, and electrolytes.",
+        "tech3-title": "Ultrasound Machine", "tech3-desc": "A medical imaging device that uses high-frequency sound waves to create real-time images of internal organs, muscles, blood vessels, and pregnancies. It does not use radiation.",
+        "tech4-title": "X-ray Machine", "tech4-desc": "A diagnostic imaging device that uses X-rays to produce images of bones, lungs, teeth, and other internal structures, helping detect fractures, infections, and diseases.",
+        "tech5-title": "Urine Analyzer", "tech5-desc": "A laboratory instrument that automatically analyzes urine samples to detect glucose, protein, blood, bacteria, pH, and other substances for diagnosing kidney disease, urinary tract infections, and diabetes.",
+        "tech6-title": "Microscope", "tech6-desc": "An optical instrument that magnifies very small objects, allowing laboratory staff to examine cells, bacteria, parasites, blood smears, and tissue samples in detail.",
         
         /* Contact & Footer */
         "contact-page-tag": "Get in Touch", "contact-page-title": "We Are Here For You", "contact-page-desc": "Reaching us is easy for any concerns or appointments.",
@@ -107,10 +109,12 @@ const translations = {
         "work2-title": "چاکبوونەوەی دوای نەشتەرگەری", "work2-desc": "سەیری ئەم نەخۆشە ئازایە بکە کە بە ئاسوودەیی دەڕوات دوای نەشتەرگەری.",
 
         "tech-page-tag": "ئامێرەکانمان", "tech-page-title": "تەکنەلۆژیای پێشکەوتوو", "tech-page-desc": "ئێمە وەبەرهێنان لە ئامێری پزیشکی سەردەمیانە دەکەین.",
-        "tech1-title": "تیشکی ئێکس-رەی", "tech1-desc": "وێنەگرتنی دیجیتاڵی بە ڕوونی بەرز.",
-        "tech2-title": "سۆناری دەستنیشانکردن", "tech2-desc": "وێنەگرتنی ڕاستەقینە بۆ پشکنینی سک و دڵ.",
-        "tech3-title": "تاقیگەی خوێن", "tech3-desc": "پشکنینی تەواوی خوێن لە چەند خولەکێکدا.",
-        "tech4-title": "ئامێری ددان", "tech4-desc": "ئامێری پێشکەوتووی پاککردنەوەی ددان.",
+        "tech1-title": "ئامێری شیکاری خوێن (CBC)", "tech1-desc": "ئامێرێکی تاقیگەییە کە شیکاری بۆ نموونەی خوێن دەکات. پێوانەی خڕۆکە سوورەکان، خڕۆکە سپییەکان، هیمۆگڵۆبین، هیماتۆکریت، و خەپلەکانی خوێن دەکات بۆ یارمەتیدان لە دەستنیشانکردنی هەوکردن، کەمخوێنی، و نەخۆشییەکانی خوێن.",
+        "tech2-title": "ئامێری شیکاری کیمیای زیندەیی", "tech2-desc": "ئامێرێکی تاقیگەیی ئۆتۆماتیکییە بۆ پێوانەکردنی ماددە کیمیاییەکانی ناو خوێن، پلازما، یان میز بەکاردێت، وەک گلوکۆز، کۆلیسترۆڵ، ئەنزیمەکانی جگەر، نیشانەکانی کارکردنی گورچیلە و ئەلکترۆلایتەکان.",
+        "tech3-title": "ئامێری سۆنار (Ultrasound)", "tech3-desc": "ئامێرێکی وێنەگرتنی پزیشکییە کە شەپۆلی دەنگی بەرز بەکاردەهێنێت بۆ دروستکردنی وێنەی ڕاستەقینەی ئەندامەکانی ناوەوە، ماسولکەکان، بۆریەکانی خوێن و دووگیانی. هیچ تیشکێک بەکارناهێنێت.",
+        "tech4-title": "ئامێری تیشکی ئێکس (X-ray)", "tech4-desc": "ئامێرێکی وێنەگرتنی دەستنیشانکردنە کە تیشکی ئێکس بەکاردەهێنێت بۆ بەرهەمهێنانی وێنەی ئێسک، سییەکان، ددان و پێکهاتەکانی تری ناوەوە، یارمەتیدەرە بۆ دەستنیشانکردنی شکان، هەوکردن و نەخۆشییەکان.",
+        "tech5-title": "ئامێری شیکاری میز", "tech5-desc": "ئامێرێکی تاقیگەییە کە بە شێوەیەکی ئۆتۆماتیکی شیکاری بۆ نموونەی میز دەکات بۆ دیاریکردنی گلوکۆز، پرۆتین، خوێن، بەکتریا، ترشێتی (pH) و ماددەکانی تر بۆ دەستنیشانکردنی نەخۆشی گورچیلە، هەوکردنی میزەڵدان و شەکرە.",
+        "tech6-title": "مایکرۆسکۆپ (وردبین)", "tech6-desc": "ئامێرێکی بیناییە کە تەنە زۆر بچووکەکان گەورە دەکات، ڕێگە بە کارمەندانی تاقیگە دەدات بە وردی پشکنین بۆ خانەکان، بەکتریا، مشەخۆرەکان، خوێن و نموونەی شانەکان بکەن.",
         
         "contact-page-tag": "پەیوەندیمان پێوە بکە", "contact-page-title": "ئێمە لێرەین بۆ تۆ", "contact-page-desc": "گەیشتن بە ئێمە ئاسانە.",
         "contact-info-title": "زانیاری پەیوەندی", "contact-hours-title": "کاتی کارکردن",
@@ -150,10 +154,12 @@ const translations = {
         "work2-title": "التعافي بعد الجراحة", "work2-desc": "شاهد هذا المريض الشجاع يمشي بشكل مريح بعد أيام فقط من الجراحة.",
 
         "tech-page-tag": "معداتنا", "tech-page-title": "تكنولوجيا بيطرية متقدمة", "tech-page-desc": "نحن نستثمر في أحدث المعدات الطبية.",
-        "tech1-title": "الأشعة السينية", "tech1-desc": "تصوير شعاعي رقمي عالي الدقة.",
-        "tech2-title": "الموجات فوق الصوتية", "tech2-desc": "تصوير غير جراحي في الوقت الفعلي.",
-        "tech3-title": "مختبر الدم", "tech3-desc": "تعداد الدم الكامل يعالج في دقائق.",
-        "tech4-title": "وحدة الأسنان", "tech4-desc": "معدات متقدمة لتنظيف وتلميع الأسنان.",
+        "tech1-title": "جهاز تحليل الدم الشامل (CBC)", "tech1-desc": "جهاز مخبري يحلل عينات الدم. يقيس خلايا الدم الحمراء والبيضاء والهيموجلوبين والصفائح الدموية للمساعدة في تشخيص العدوى وفقر الدم واضطرابات الدم.",
+        "tech2-title": "محلل الكيمياء الحيوية", "tech2-desc": "أداة مخبرية آلية تستخدم لقياس المواد الكيميائية في الدم أو المصل أو البلازما أو البول، مثل الجلوكوز والكوليسترول وإنزيمات الكبد وعلامات وظائف الكلى والشوارد.",
+        "tech3-title": "جهاز الموجات فوق الصوتية (سونار)", "tech3-desc": "جهاز تصوير طبي يستخدم موجات صوتية عالية التردد لإنشاء صور حية للأعضاء الداخلية والعضلات والأوعية الدموية وحالات الحمل. لا يستخدم الإشعاع.",
+        "tech4-title": "جهاز الأشعة السينية (X-ray)", "tech4-desc": "جهاز تصوير تشخيصي يستخدم الأشعة السينية لإنتاج صور للعظام والرئتين والأسنان والهياكل الداخلية الأخرى، مما يساعد في اكتشاف الكسور والالتهابات والأمراض.",
+        "tech5-title": "محلل البول", "tech5-desc": "أداة مخبرية تحلل عينات البول تلقائياً للكشف عن الجلوكوز والبروتين والدم والبكتيريا ودرجة الحموضة وغيرها من المواد لتشخيص أمراض الكلى والتهابات المسالك البولية والسكري.",
+        "tech6-title": "مجهر (ميكروسكوب)", "tech6-desc": "أداة بصرية تكبر الأشياء الصغيرة جداً، مما يسمح لموظفي المختبر بفحص الخلايا والبكتيريا والطفيليات ومسحات الدم وعينات الأنسجة بالتفصيل.",
         
         "contact-page-tag": "تواصل معنا", "contact-page-title": "نحن هنا من أجلك", "contact-page-desc": "الوصول إلينا سهل في أي وقت.",
         "contact-info-title": "معلومات الاتصال", "contact-hours-title": "ساعات العمل",
