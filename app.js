@@ -6,9 +6,6 @@ const MAX_ACTIVE_PAWS = 4;
 const PAW_THROTTLE_MS = 250;
 
 document.addEventListener('click', function(e) {
-    // Off on mobile entirely — desktop-only flourish
-    if (window.innerWidth <= 768) return;
-
     const now = Date.now();
     if (now - lastPawTime < PAW_THROTTLE_MS) return;
     if (activePawCount >= MAX_ACTIVE_PAWS) return;
