@@ -1,11 +1,13 @@
-// Paw Print Click Effect (throttled + skipped on interactive elements so it
+// ==========================================================================
+// PAW PRINT CLICK EFFECT (throttled + skipped on interactive elements so it
 // doesn't pile up and make the mobile menu feel stuck)
+// ==========================================================================
 let lastPawTime = 0;
 let activePawCount = 0;
 const MAX_ACTIVE_PAWS = 4;
 const PAW_THROTTLE_MS = 250;
 
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
     const now = Date.now();
     if (now - lastPawTime < PAW_THROTTLE_MS) return;
     if (activePawCount >= MAX_ACTIVE_PAWS) return;
@@ -23,6 +25,9 @@ document.addEventListener('click', function(e) {
     setTimeout(() => { paw.remove(); activePawCount--; }, 800);
 });
 
+// ==========================================================================
+// TRANSLATIONS
+// ==========================================================================
 const translations = {
     en: {
         "nav-home": "Home", "nav-services": "Services", "nav-team": "Our Team", "nav-work": "Our Work", "nav-contact": "Contact", "nav-tech": "Tech & Tests",
@@ -35,14 +40,14 @@ const translations = {
         "about-tag": "Welcome to Asia Vet", "about-title": "A New Standard in Veterinary Excellence",
         "about-desc": "We believe your pets deserve the same level of medical care as any family member. Equipped with modern technology and a passionate team.",
         "about-btn": "Learn More About Us",
-        
+
         /* Services */
         "serv-page-tag": "What We Do", "serv-page-title": "Comprehensive Pet Healthcare", "serv-page-desc": "From routine wellness checks and premium nutrition to advanced surgical procedures.",
         "srv1-title": "Pharmacy & Retail Supplies", "srv1-desc": "Our fully stocked on-site retail center ensures you never have to go out of your way for your pet's essentials.",
         "srv2-title": "Advanced Diagnostics", "srv2-desc": "Our hospital features a state-of-the-art internal laboratory that delivers accurate, rapid test results.",
         "srv3-title": "Expert Surgical Care", "srv3-desc": "Our surgical suite is equipped for maximum safety. From routine spays to complex soft tissue procedures.",
         "srv4-title": "Professional Grooming", "srv4-desc": "Keep your pet looking and feeling their best with haircuts, nail trimming, and deep cleaning showers.",
-        
+
         /* Team */
         "team-page-tag": "The Experts", "team-page-title": "Meet Our Dedicated Team", "team-page-desc": "Our passionate veterinarians and support staff treat every patient as if they were their own.",
         "team-doc-heading": "Our Veterinarians", "team-staff-heading": "Grooming & Care Staff",
@@ -67,7 +72,7 @@ const translations = {
         "tech4-title": "X-ray Machine", "tech4-desc": "A diagnostic imaging device that uses X-rays to produce images of bones, lungs, teeth, and other internal structures, helping detect fractures, infections, and diseases.",
         "tech5-title": "Urine Analyzer", "tech5-desc": "A laboratory instrument that automatically analyzes urine samples to detect glucose, protein, blood, bacteria, pH, and other substances for diagnosing kidney disease, urinary tract infections, and diabetes.",
         "tech6-title": "Microscope", "tech6-desc": "An optical instrument that magnifies very small objects, allowing laboratory staff to examine cells, bacteria, parasites, blood smears, and tissue samples in detail.",
-        
+
         /* Contact & Footer */
         "contact-page-tag": "Get in Touch", "contact-page-title": "We Are Here For You", "contact-page-desc": "Reaching us is easy for any concerns or appointments.",
         "contact-info-title": "Contact Information", "contact-hours-title": "Operating Hours",
@@ -93,7 +98,7 @@ const translations = {
         "srv2-title": "پشکنین و دەستنیشانکردن", "srv2-desc": "نەخۆشخانەکەمان تاقیگەیەکی ناوخۆیی پێشکەوتووی هەیە بۆ ئەنجامی خێرا.",
         "srv3-title": "چاودێری نەشتەرگەری", "srv3-desc": "ژووری نەشتەرگەریمان بۆ زۆرترین سەلامەتی ئامادە کراوە.",
         "srv4-title": "تووک بڕین و خۆشۆردن", "srv4-desc": "خزمەتگوزارییەکانمان بریتین لە توک بڕین و خۆشۆردنی قووڵ.",
-        
+
         "team-page-tag": "پسپۆڕەکان", "team-page-title": "چاوپێکەوتن لەگەڵ تیمە دڵسۆزەکەمان", "team-page-desc": "پزیشکەکانمان وەک هی خۆیان مامەڵە لەگەڵ نەخۆشێک دەکەن.",
         "team-doc-heading": "پزیشکە ڤێتێرنەرییەکانمان", "team-staff-heading": "تیمی توک بڕین و شۆردن",
         "doc1-role": "پزیشکی سەرەکی و نەشتەرگەر", "doc1-desc": "پسپۆڕ لە نەشتەرگەری پێشکەوتوو و چاودێری ورد.",
@@ -115,7 +120,7 @@ const translations = {
         "tech4-title": "ئامێری تیشکی ئێکس (X-ray)", "tech4-desc": "ئامێرێکی وێنەگرتنی دەستنیشانکردنە کە تیشکی ئێکس بەکاردەهێنێت بۆ بەرهەمهێنانی وێنەی ئێسک، سییەکان، ددان و پێکهاتەکانی تری ناوەوە، یارمەتیدەرە بۆ دەستنیشانکردنی شکان، هەوکردن و نەخۆشییەکان.",
         "tech5-title": "ئامێری شیکاری میز", "tech5-desc": "ئامێرێکی تاقیگەییە کە بە شێوەیەکی ئۆتۆماتیکی شیکاری بۆ نموونەی میز دەکات بۆ دیاریکردنی گلوکۆز، پرۆتین، خوێن، بەکتریا، ترشێتی (pH) و ماددەکانی تر بۆ دەستنیشانکردنی نەخۆشی گورچیلە، هەوکردنی میزەڵدان و شەکرە.",
         "tech6-title": "مایکرۆسکۆپ (وردبین)", "tech6-desc": "ئامێرێکی بیناییە کە تەنە زۆر بچووکەکان گەورە دەکات، ڕێگە بە کارمەندانی تاقیگە دەدات بە وردی پشکنین بۆ خانەکان، بەکتریا، مشەخۆرەکان، خوێن و نموونەی شانەکان بکەن.",
-        
+
         "contact-page-tag": "پەیوەندیمان پێوە بکە", "contact-page-title": "ئێمە لێرەین بۆ تۆ", "contact-page-desc": "گەیشتن بە ئێمە ئاسانە.",
         "contact-info-title": "زانیاری پەیوەندی", "contact-hours-title": "کاتی کارکردن",
         "hours-week": "شەممە - پێنجشەممە: ٩:٠٠ بەیانی - ١٠:٠٠ شەو", "hours-weekend": "هەینی: ١:٠٠ پاشنیوەڕۆ - ٥:٠٠ ئێوارە",
@@ -132,13 +137,13 @@ const translations = {
         "ribbon-1": "أطباء خبراء", "ribbon-2": "مختبر داخلي", "ribbon-3": "صيدلية متميزة",
         "about-tag": "مرحباً بكم", "about-title": "معيار جديد في التميز البيطري", "about-desc": "نحن نؤمن بأن حيواناتك الأليفة تستحق نفس المستوى من الرعاية الطبية.",
         "about-btn": "تعرف علينا",
-        
+
         "serv-page-tag": "ماذا نفعل", "serv-page-title": "رعاية صحية شاملة", "serv-page-desc": "نحن مجهزون بالكامل للتعامل مع جميع احتياجات حيوانك الأليف.",
         "srv1-title": "صيدلية ومستلزمات", "srv1-desc": "مركز البيع بالتجزئة الخاص بنا المجهز بالكامل.",
         "srv2-title": "التشخيص والاختبارات", "srv2-desc": "مستشفانا يتميز بمختبر داخلي حديث يقدم نتائج دقيقة.",
         "srv3-title": "رعاية جراحية متخصصة", "srv3-desc": "جناح الجراحة لدينا مجهز لتحقيق أقصى درجات الأمان.",
         "srv4-title": "حلاقة واستحمام", "srv4-desc": "تشمل خدماتنا اللطيفة قص الشعر والاستحمام العميق.",
-        
+
         "team-page-tag": "الخبراء", "team-page-title": "تعرف على فريقنا المتفاني", "team-page-desc": "يعامل الأطباء البيطريون موظفو الدعم لدينا كل مريض كعائلتهم.",
         "team-doc-heading": "أطباؤنا البيطريون", "team-staff-heading": "فريق الحلاقة والرعاية",
         "doc1-role": "طبيب بيطري رئيسي", "doc1-desc": "متخصص في جراحة الأنسجة الرخوة المتقدمة.",
@@ -160,7 +165,7 @@ const translations = {
         "tech4-title": "جهاز الأشعة السينية (X-ray)", "tech4-desc": "جهاز تصوير تشخيصي يستخدم الأشعة السينية لإنتاج صور للعظام والرئتين والأسنان والهياكل الداخلية الأخرى، مما يساعد في اكتشاف الكسور والالتهابات والأمراض.",
         "tech5-title": "محلل البول", "tech5-desc": "أداة مخبرية تحلل عينات البول تلقائياً للكشف عن الجلوكوز والبروتين والدم والبكتيريا ودرجة الحموضة وغيرها من المواد لتشخيص أمراض الكلى والتهابات المسالك البولية والسكري.",
         "tech6-title": "مجهر (ميكروسكوب)", "tech6-desc": "أداة بصرية تكبر الأشياء الصغيرة جداً، مما يسمح لموظفي المختبر بفحص الخلايا والبكتيريا والطفيليات ومسحات الدم وعينات الأنسجة بالتفصيل.",
-        
+
         "contact-page-tag": "تواصل معنا", "contact-page-title": "نحن هنا من أجلك", "contact-page-desc": "الوصول إلينا سهل في أي وقت.",
         "contact-info-title": "معلومات الاتصال", "contact-hours-title": "ساعات العمل",
         "hours-week": "السبت - الخميس: 9:00 صباحاً - 10:00 مساءً", "hours-weekend": "الجمعة: 1:00 ظهراً - 5:00 مساءً",
@@ -170,6 +175,9 @@ const translations = {
         "footer-loc": "سلێمانی، کوردستان", "footer-home": "الرئيسية", "footer-services": "خدماتنا", "footer-team": "تعرف على الفريق", "footer-tech": "التكنولوجيا"
     }
 };
+
+// Kurdish Sorani and Arabic are both written right-to-left.
+const RTL_LANGS = ['ku', 'ar'];
 
 const langToggles = [document.getElementById('lang-toggle'), document.getElementById('lang-toggle-mobile')];
 const savedLang = localStorage.getItem('siteLang') || 'en';
@@ -181,7 +189,7 @@ langToggles.forEach(toggle => {
         toggle.value = savedLang;
         toggle.addEventListener('change', (e) => {
             localStorage.setItem('siteLang', e.target.value);
-            langToggles.forEach(t => { if(t) t.value = e.target.value; });
+            langToggles.forEach(t => { if (t) t.value = e.target.value; });
             applyLanguage(e.target.value);
         });
     }
@@ -189,6 +197,12 @@ langToggles.forEach(toggle => {
 
 function applyLanguage(lang) {
     if (!translations[lang]) return;
+
+    // Flip page direction for RTL languages so alignment, icon direction,
+    // and native text shaping all follow the correct reading order.
+    document.documentElement.lang = lang;
+    document.documentElement.dir = RTL_LANGS.includes(lang) ? 'rtl' : 'ltr';
+
     for (const key in translations[lang]) {
         // Some ids (like the nav links) intentionally appear twice on a page —
         // once in the desktop nav and once in the mobile hamburger menu.
@@ -199,14 +213,47 @@ function applyLanguage(lang) {
     }
 }
 
+// ==========================================================================
+// MOBILE MENU
+// Opens/closes the hamburger menu, and — importantly — closes itself again
+// once a link is actually tapped, closes on outside tap, and closes on Esc.
+// ==========================================================================
 const mobileBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
+
+function setMobileMenuOpen(open) {
+    if (!mobileMenu || !mobileBtn) return;
+    mobileMenu.classList.toggle('hidden', !open);
+    mobileBtn.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+}
+
 if (mobileBtn && mobileMenu) {
+    mobileBtn.setAttribute('aria-expanded', 'false');
+    mobileBtn.setAttribute('aria-controls', 'mobile-menu');
+
     mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+        setMobileMenuOpen(mobileMenu.classList.contains('hidden'));
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setMobileMenuOpen(false));
+    });
+
+    document.addEventListener('click', (e) => {
+        if (mobileMenu.classList.contains('hidden')) return;
+        if (e.target.closest('#mobile-menu, #mobile-menu-btn')) return;
+        setMobileMenuOpen(false);
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setMobileMenuOpen(false);
     });
 }
 
+// ==========================================================================
+// CONTACT MAP TAP-TO-INTERACT
+// ==========================================================================
 const mapOverlay = document.getElementById('map-tap-overlay');
 const mapFrame = document.getElementById('contact-map-frame');
 if (mapOverlay && mapFrame) {
@@ -216,26 +263,26 @@ if (mapOverlay && mapFrame) {
     });
 }
 
-let revealTicking = false;
-function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
-    for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 100;
-        if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add("active");
-        }
-    }
-}
-
-window.addEventListener("scroll", function () {
-    if (!revealTicking) {
-        window.requestAnimationFrame(() => {
-            reveal();
-            revealTicking = false;
+// ==========================================================================
+// SCROLL REVEAL
+// Uses IntersectionObserver instead of a scroll listener — the browser only
+// notifies us when an element actually crosses into view, which is both
+// smoother and lighter on battery than checking every element on every
+// scroll frame (which matters most on the phones this site targets).
+// ==========================================================================
+const revealTargets = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window && revealTargets.length) {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                revealObserver.unobserve(entry.target);
+            }
         });
-        revealTicking = true;
-    }
-}, { passive: true });
-reveal();
+    }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+
+    revealTargets.forEach(el => revealObserver.observe(el));
+} else {
+    // Fallback for older browsers without IntersectionObserver support
+    revealTargets.forEach(el => el.classList.add('active'));
+}

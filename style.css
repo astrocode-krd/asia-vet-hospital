@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================================================
+   DESIGN TOKENS
+   ========================================================================== */
+:root {
+    --brand-green: #008b6b;
+    --brand-green-dark: #006b52;
+    --brand-green-light: #00a67e;
+    --brand-dark: #1a202c;
+    --brand-gray: #f8fafc;
+    --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.06);
+    --shadow-lift: 0 20px 40px rgba(15, 23, 42, 0.12);
+}
+
 @font-face {
     font-family: 'Rabar_38';
     src: local('Rabar_38'), url('Rabar_38.ttf') format('truetype');
@@ -10,35 +23,74 @@
     font-display: swap;
 }
 
-body {
-    background-color: #f8fafc;
-    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.2 19.3c-2.3 0-4.2-1.9-4.2-4.2 0-2.3 1.9-4.2 4.2-4.2 2.3 0 4.2 1.9 4.2 4.2 0 2.3-1.9 4.2-4.2 4.2zm12 0c-2.3 0-4.2-1.9-4.2-4.2 0-2.3 1.9-4.2 4.2-4.2 2.3 0 4.2 1.9 4.2 4.2 0 2.3-1.9 4.2-4.2 4.2zm-17.5 7.5c-2.3 0-4.2-1.9-4.2-4.2 0-2.3 1.9-4.2 4.2-4.2 2.3 0 4.2 1.9 4.2 4.2 0 2.3-1.9 4.2-4.2 4.2zm23 0c-2.3 0-4.2-1.9-4.2-4.2 0-2.3 1.9-4.2 4.2-4.2 2.3 0 4.2 1.9 4.2 4.2 0 2.3-1.9 4.2-4.2 4.2zm-11.5 13c-4.5 0-8.2-3.7-8.2-8.2 0-4.5 3.7-8.2 8.2-8.2 4.5 0 8.2 3.7 8.2 8.2 0 4.5-3.7 8.2-8.2 8.2z' fill='%23008b6b' fill-opacity='0.04' fill-rule='evenodd'/%3E%3C/svg%3E");
-}
-
 html { scroll-behavior: smooth; }
 
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #f1f5f9; }
-::-webkit-scrollbar-thumb { background: #008b6b; border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: #006b52; }
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
 
+body {
+    background-color: var(--brand-gray);
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.2 19.3c-2.3 0-4.2-1.9-4.2-4.2 0-2.3 1.9-4.2 4.2-4.2 2.3 0 4.2 1.9 4.2 4.2 0 2.3-1.9 4.2-4.2 4.2zm12 0c-2.3 0-4.2-1.9-4.2-4.2 0-2.3 1.9-4.2 4.2-4.2 2.3 0 4.2 1.9 4.2 4.2 0 2.3-1.9 4.2-4.2 4.2zm-17.5 7.5c-2.3 0-4.2-1.9-4.2-4.2 0-2.3 1.9-4.2 4.2-4.2 2.3 0 4.2 1.9 4.2 4.2 0 2.3-1.9 4.2-4.2 4.2zm23 0c-2.3 0-4.2-1.9-4.2-4.2 0-2.3 1.9-4.2 4.2-4.2 2.3 0 4.2 1.9 4.2 4.2 0 2.3-1.9 4.2-4.2 4.2zm-11.5 13c-4.5 0-8.2-3.7-8.2-8.2 0-4.5 3.7-8.2 8.2-8.2 4.5 0 8.2 3.7 8.2 8.2 0 4.5-3.7 8.2-8.2 8.2z' fill='%23008b6b' fill-opacity='0.04' fill-rule='evenodd'/%3E%3C/svg%3E");
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* Visible, brand-colored keyboard focus everywhere (accessibility) */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid var(--brand-green);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+::selection { background: var(--brand-green); color: #fff; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: var(--brand-green); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand-green-dark); }
+
+/* ==========================================================================
+   MOTION / REVEAL-ON-SCROLL
+   ========================================================================== */
 @layer utilities {
-    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
     .reveal.active { opacity: 1; transform: translateY(0); }
     .animate-float { animation: float 6s ease-in-out infinite; }
 }
 
+/* Staggered cascade for card grids: each card's transition-delay increases
+   a little so groups of cards feel like they arrive as a considered sequence
+   instead of popping in all at once. */
+.stagger-grid > .reveal:nth-child(1) { transition-delay: 0ms; }
+.stagger-grid > .reveal:nth-child(2) { transition-delay: 90ms; }
+.stagger-grid > .reveal:nth-child(3) { transition-delay: 180ms; }
+.stagger-grid > .reveal:nth-child(4) { transition-delay: 270ms; }
+.stagger-grid > .reveal:nth-child(5) { transition-delay: 360ms; }
+.stagger-grid > .reveal:nth-child(6) { transition-delay: 450ms; }
+.stagger-grid > .reveal:nth-child(7) { transition-delay: 540ms; }
+
 @keyframes float {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-16px); }
     100% { transform: translateY(0px); }
 }
 
-/* --- BIGGER PAW PRINT CLICK EFFECT --- */
+/* --- PAW PRINT CLICK EFFECT --- */
 .paw-click {
     position: absolute;
-    color: #008b6b;
-    font-size: 45px; /* Increased size significantly */
+    color: var(--brand-green);
+    font-size: 42px;
     pointer-events: none;
     z-index: 99999;
     transform: translate(-50%, -50%);
@@ -51,30 +103,51 @@ html { scroll-behavior: smooth; }
     100% { opacity: 0; transform: translate(-50%, -150%) scale(1); }
 }
 
-/* --- NEW CUSTOM STYLES --- */
+/* ==========================================================================
+   COMPONENTS
+   ========================================================================== */
 .staff-phone {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     margin-top: 12px;
-    color: #008b6b;
+    color: var(--brand-green);
     font-weight: 700;
     text-decoration: none;
     font-size: 0.95rem;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, transform 0.2s;
 }
 .staff-phone:hover { opacity: 0.8; }
+.staff-phone:active { transform: scale(0.96); }
+
+.staff-card { transition: box-shadow 0.3s ease, transform 0.3s ease; }
+.staff-card:hover { transform: translateY(-4px); }
 
 .our-work-newspaper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 30px;
     margin: 0 auto;
 }
-.work-item { background: #fff; padding: 20px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 2px solid #f1f5f9; }
+.work-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+    border: 2px solid #f1f5f9;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.work-item:hover { box-shadow: var(--shadow-lift); transform: translateY(-4px); }
 .media-container { display: flex; gap: 10px; margin-bottom: 15px; }
 .half-img { width: 50%; height: 250px; object-fit: cover; border-radius: 12px; }
-.full-video { width: 100%; height: 300px; object-fit: cover; border-radius: 12px; }
+.full-video { width: 100%; height: 300px; object-fit: cover; border-radius: 12px; background: var(--brand-dark); }
+
+/* Tactile press feedback for tappable elements — hover states mean nothing
+   on a touchscreen, so buttons and cards get a quick scale-down on :active
+   instead, which reads as "the phone registered your tap". */
+a, button { -webkit-tap-highlight-color: transparent; }
+.tap-scale { transition: transform 0.15s ease; }
+.tap-scale:active { transform: scale(0.95); }
 
 /* --- MAP SCROLL FIX ---
    On touch devices, scrolling a finger over an embedded Google Map makes
@@ -86,81 +159,63 @@ html { scroll-behavior: smooth; }
 .map-frame.map-active { pointer-events: auto; }
 #map-tap-overlay.map-active { display: none; }
 
+/* Fixed nav needs to clear the iPhone notch / dynamic island in landscape
+   and on newer devices; env() falls back to 0 harmlessly everywhere else. */
+.safe-top { padding-top: env(safe-area-inset-top); }
 
-/* --- STRICT MOBILE OPTIMIZATION FIX --- */
+/* ==========================================================================
+   RTL SUPPORT (Kurdish Sorani + Arabic both read right-to-left)
+   The page direction itself is toggled in app.js via the <html dir> attribute.
+   These rules patch the handful of directional utility classes that Tailwind
+   generates as fixed left/right values so the mirrored layout still reads
+   naturally instead of just flipping the script but not the composition.
+   ========================================================================== */
+[dir="rtl"] { text-align: right; }
+[dir="rtl"] .text-left { text-align: right; }
+[dir="rtl"] .justify-start { justify-content: flex-end; }
+[dir="rtl"] .text-right { text-align: left; }
+[dir="rtl"] .justify-end { justify-content: flex-start; }
+
+@media (min-width: 768px) {
+    [dir="rtl"] .md\:text-left { text-align: right; }
+    [dir="rtl"] .md\:justify-start { justify-content: flex-end; }
+    [dir="rtl"] .md\:flex-row { flex-direction: row-reverse; }
+    [dir="rtl"] .md\:flex-row-reverse { flex-direction: row; }
+    [dir="rtl"] .md\:text-right { text-align: left; }
+}
+
+/* Arrow icons should point toward "forward" for the reading direction */
+[dir="rtl"] .ph-arrow-right::before { display: inline-block; transform: scaleX(-1); }
+
+/* ==========================================================================
+   RESPONSIVE SAFETY NET
+   Pages already carry responsive Tailwind classes (pt-24 md:pt-32, etc.),
+   so this layer only needs to catch structural edge cases rather than
+   patch every spacing utility with !important.
+   ========================================================================== */
 @media (max-width: 768px) {
-    /* Never allow anything to force a horizontal scrollbar */
     html, body { overflow-x: hidden; width: 100%; }
     * { max-width: 100%; }
 
-    /* Stack grid columns neatly */
-    .our-work-newspaper, .grid, .staff-grid { grid-template-columns: 1fr !important; gap: 20px; }
+    .our-work-newspaper, .staff-grid { grid-template-columns: 1fr !important; gap: 20px; }
 
-    /* Shrink giant heading fonts so they always fit small screens */
-    h1 { font-size: 1.85rem !important; line-height: 1.2 !important; }
-    h2 { font-size: 1.45rem !important; line-height: 1.25 !important; }
-    h3 { font-size: 1.1rem !important; }
-    h5 { font-size: 0.7rem !important; }
-    p  { font-size: 0.9rem !important; line-height: 1.5 !important; }
-
-    /* Trim the big vertical spacing Tailwind uses on desktop so pages feel
-       compact instead of oversized on a phone (matches exact class names,
-       so it never touches unrelated utility classes) */
-    .pt-32 { padding-top: 5rem !important; }
-    .pb-24 { padding-bottom: 3rem !important; }
-    .pt-24 { padding-top: 4rem !important; }
-    .pb-16 { padding-bottom: 2.5rem !important; }
-    .mb-20 { margin-bottom: 3rem !important; }
-    .mb-16 { margin-bottom: 2rem !important; }
-    .gap-24 { gap: 3rem !important; }
-    .gap-16 { gap: 2rem !important; }
-    .gap-12 { gap: 1.75rem !important; }
-
-    /* Keep images, videos, cards, and embeds inside the screen */
     img, video, .work-item, .staff-card, iframe { max-width: 100% !important; box-sizing: border-box; }
     iframe { width: 100% !important; height: 100% !important; }
 
-    /* Fix Before/After image behavior on tiny screens */
     .media-container { flex-direction: column; }
     .half-img { width: 100%; height: 200px; }
     .full-video { height: 200px; }
 
-    /* Smaller nav logo + call button so the header doesn't feel cramped */
-    nav img { height: 2.75rem !important; }
     nav a[href^="tel:"] { padding: 0.5rem 1rem !important; font-size: 0.8rem !important; }
-
-    /* Slightly softer corners on phones so cards feel proportional */
     .rounded-3xl { border-radius: 1.25rem !important; }
-
-    /* Give the hero section room to breathe without towering over the screen */
-    section.h-\[70vh\] { min-height: 440px !important; height: auto !important; padding-top: 2rem; padding-bottom: 2rem; }
 }
 
-@media (max-width: 400px) {
-    h1 { font-size: 1.55rem !important; }
-    h2 { font-size: 1.3rem !important; }
-    .staff-card { padding: 1rem !important; }
-}
-
-/* --- LANDSCAPE PHONE FIX ---
-   Rotating a phone sideways often makes it wider than Tailwind's 768px
-   "md" breakpoint, which was silently switching the site into its
-   desktop spacing/sizing even though it's still a small touch screen.
-   These rules key off screen HEIGHT instead, so they catch a phone in
-   landscape no matter how wide it reports itself as. */
+/* Rotating a phone sideways often makes it wider than Tailwind's 768px "md"
+   breakpoint, which would silently switch the site into desktop sizing even
+   though it's still a small touchscreen. This keys off screen HEIGHT instead
+   so it still catches a phone in landscape no matter how wide it reports. */
 @media (orientation: landscape) and (max-height: 500px) {
-    h1 { font-size: 1.6rem !important; line-height: 1.2 !important; }
-    h2 { font-size: 1.3rem !important; }
-    p  { font-size: 0.85rem !important; }
-
-    /* Cap the hero so it never forces the phone to scroll just to see the button */
     .h-\[70vh\], .md\:h-\[85vh\] { height: auto !important; }
-    .min-h-\[500px\], .md\:min-h-\[600px\] { min-height: 320px !important; }
-
+    .min-h-\[500px\], .md\:min-h-\[600px\] { min-height: 300px !important; }
     main { padding-top: 4.5rem !important; }
-    .pt-32, .pt-24 { padding-top: 3rem !important; }
-    .pb-24, .pb-16 { padding-bottom: 2rem !important; }
-    .mb-20, .mb-16 { margin-bottom: 1.5rem !important; }
-    .gap-24 { gap: 2rem !important; }
-    nav img { height: 2.25rem !important; }
 }

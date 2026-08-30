@@ -2,8 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Asia Veterinary Hospital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Asia Veterinary Hospital | Sulaymaniyah</title>
+    <meta name="description" content="Asia Veterinary Hospital in Sulaymaniyah offers expert vets, an in-house diagnostic lab, surgery, and a full pet pharmacy — all under one roof. Call 0770 191 0125.">
+    <meta name="theme-color" content="#1a202c">
+    <link rel="icon" href="logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Asia Veterinary Hospital | Sulaymaniyah">
+    <meta property="og:description" content="Advanced healthcare for your best friend — expert vets, in-house lab, surgery, and pharmacy in Sulaymaniyah.">
+    <meta property="og:image" content="logo.png">
+    <link rel="preload" href="Rabar_38.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -14,8 +23,8 @@
 </head>
 <body class="bg-brandGray text-brandDark overflow-x-hidden flex flex-col min-h-screen">
 
-    <!-- UPDATED NAVBAR WITH 'OUR WORK' LINK -->
-    <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full top-0 z-50 border-b border-gray-100 transition-all duration-300">
+    <!-- NAVBAR -->
+    <nav class="safe-top bg-white/95 backdrop-blur-md shadow-sm fixed w-full top-0 z-50 border-b border-gray-100 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 md:px-12 py-3 flex justify-between items-center">
             <a href="index.html" class="flex items-center group">
                 <img src="logo.png" alt="Asia Vet Logo" class="h-12 md:h-16 w-auto object-contain transform group-hover:scale-105 transition-transform">
@@ -27,18 +36,18 @@
                 <a href="team.html" class="text-gray-500 hover:text-brandGreen transition-colors" id="nav-team">Our Team</a>
                 <a href="work.html" class="text-gray-500 hover:text-brandGreen transition-colors" id="nav-work">Our Work</a>
                 <a href="contact.html" class="text-gray-500 hover:text-brandGreen transition-colors" id="nav-contact">Contact</a>
-                <select id="lang-toggle" class="bg-gray-50 text-gray-700 text-xs font-bold rounded-lg px-3 py-2 border border-gray-200 outline-none cursor-pointer hover:border-brandGreen transition">
+                <select id="lang-toggle" aria-label="Choose language" class="bg-gray-50 text-gray-700 text-xs font-bold rounded-lg px-3 py-2 border border-gray-200 outline-none cursor-pointer hover:border-brandGreen transition">
                     <option value="en">EN</option><option value="ku">KU</option><option value="ar">AR</option>
                 </select>
-                <a href="tel:07701910125" class="bg-brandDark hover:bg-brandGreen text-white px-6 py-2.5 rounded-full transition-colors shadow-md flex items-center gap-2">
+                <a href="tel:07701910125" class="tap-scale bg-brandDark hover:bg-brandGreen text-white px-6 py-2.5 rounded-full transition-colors shadow-md flex items-center gap-2">
                     <i class="ph ph-phone text-lg"></i> 0770 191 0125
                 </a>
             </div>
             <div class="flex items-center gap-3 md:hidden">
-                <select id="lang-toggle-mobile" class="bg-gray-50 text-gray-700 text-xs font-bold rounded-lg px-2 py-2 border border-gray-200 outline-none cursor-pointer">
+                <select id="lang-toggle-mobile" aria-label="Choose language" class="bg-gray-50 text-gray-700 text-xs font-bold rounded-lg px-2 py-2 border border-gray-200 outline-none cursor-pointer">
                     <option value="en">EN</option><option value="ku">KU</option><option value="ar">AR</option>
                 </select>
-                <button id="mobile-menu-btn" class="text-brandDark text-3xl"><i class="ph ph-list"></i></button>
+                <button id="mobile-menu-btn" aria-label="Toggle navigation menu" class="text-brandDark text-3xl tap-scale"><i class="ph ph-list"></i></button>
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 absolute w-full shadow-xl">
@@ -57,8 +66,8 @@
     <main class="flex-grow pt-20 md:pt-24">
         <section class="relative h-[70vh] md:h-[85vh] min-h-[500px] md:min-h-[600px] flex items-center justify-center overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-r from-brandDark/95 to-brandDark/50 z-10"></div>
-            <img src="outside.png" class="absolute inset-0 w-full h-full object-cover z-0 transform scale-105" alt="Hospital Exterior">
-            
+            <img src="outside.png" class="absolute inset-0 w-full h-full object-cover z-0 transform scale-105" alt="Asia Veterinary Hospital exterior" fetchpriority="high">
+
             <div class="relative z-20 max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col md:flex-row items-center justify-between">
                 <div class="md:w-3/5 text-center md:text-left text-white reveal active">
                     <div class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-4 md:mb-6 text-xs md:text-sm font-semibold mx-auto md:mx-0">
@@ -72,8 +81,11 @@
                         State-of-the-art veterinary medicine, expert surgeries, and a premium retail pharmacy—all under one roof in Sulaymaniyah.
                     </p>
                     <div class="flex justify-center md:justify-start gap-4">
-                        <a href="contact.html" class="bg-brandGreen hover:bg-emerald-500 text-white font-bold py-3 px-6 md:py-4 md:px-8 rounded-full transition-all shadow-[0_0_25px_rgba(0,139,107,0.5)] flex items-center gap-2 text-sm md:text-base" id="hero-btn">
+                        <a href="contact.html" class="tap-scale bg-brandGreen hover:bg-emerald-500 text-white font-bold py-3 px-6 md:py-4 md:px-8 rounded-full transition-all shadow-[0_0_25px_rgba(0,139,107,0.5)] flex items-center gap-2 text-sm md:text-base" id="hero-btn">
                             Book an Appointment <i class="ph-bold ph-arrow-right"></i>
+                        </a>
+                        <a href="tel:07701910125" class="tap-scale md:hidden bg-white/10 border border-white/30 text-white font-bold py-3 px-5 rounded-full flex items-center gap-2 text-sm backdrop-blur-md">
+                            <i class="ph ph-phone"></i> Call
                         </a>
                     </div>
                 </div>
@@ -112,8 +124,8 @@
         <section class="py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
             <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
                 <div class="w-full md:w-1/2 relative reveal">
-                    <img src="inside.png" alt="Inside Clinic" class="rounded-3xl shadow-2xl w-4/5 mx-auto md:mx-0">
-                    <img src="casher.png" alt="Checkout" class="rounded-3xl shadow-xl w-3/5 absolute -bottom-6 md:-bottom-10 right-0 md:-right-4 border-4 md:border-8 border-brandGray">
+                    <img src="inside.png" alt="Inside the Asia Veterinary Hospital clinic" loading="lazy" decoding="async" class="rounded-3xl shadow-2xl w-4/5 mx-auto md:mx-0">
+                    <img src="casher.png" alt="Reception and checkout area" loading="lazy" decoding="async" class="rounded-3xl shadow-xl w-3/5 absolute -bottom-6 md:-bottom-10 right-0 md:-right-4 border-4 md:border-8 border-brandGray">
                     <div class="absolute -top-6 -left-6 w-24 h-24 md:w-32 md:h-32 bg-brandGreen/10 rounded-full blur-2xl -z-10"></div>
                 </div>
                 <div class="w-full md:w-1/2 mt-8 md:mt-0 reveal text-center md:text-left">
@@ -130,21 +142,20 @@
         </section>
     </main>
 
-    <!-- FOOTER WITH SOCIAL LINKS -->
+    <!-- FOOTER -->
     <footer class="bg-brandDark text-white pt-16 md:pt-20 pb-8 md:pb-10 border-t-4 border-brandGreen mt-auto reveal relative overflow-hidden">
         <i class="ph-fill ph-paw-print absolute -bottom-10 -right-10 text-[10rem] md:text-[15rem] text-white/5 pointer-events-none transform -rotate-12"></i>
         <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12 mb-10 md:mb-12 relative z-10 text-center md:text-left">
             <div class="col-span-1 md:col-span-1">
                 <div class="mb-4 md:mb-6 flex justify-center md:justify-start">
-                    <img src="logo.png" alt="Asia Vet Logo" class="h-12 md:h-16 object-contain bg-white rounded-lg p-2">
+                    <img src="logo.png" alt="Asia Vet Logo" loading="lazy" class="h-12 md:h-16 object-contain bg-white rounded-lg p-2">
                 </div>
                 <p class="text-gray-400 text-xs md:text-sm leading-relaxed" id="footer-desc">Elevating veterinary standards in Sulaymaniyah.</p>
 
-                   <!-- SOCIAL MEDIA LINKS: replace the href="#" values below with your real page URLs -->
                 <div class="flex gap-4 mt-6 justify-center md:justify-start">
-                    <a href="https://www.facebook.com/share/198oStqdX2/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brandGreen hover:text-white transition text-gray-300 text-xl"><i class="ph-fill ph-facebook-logo"></i></a>
-                    <a href="https://www.instagram.com/asia_vet_hospital?igsh=andrZW14bWptYnJk" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brandGreen hover:text-white transition text-gray-300 text-xl"><i class="ph-fill ph-instagram-logo"></i></a>
-                    <a href="https://www.tiktok.com/@asia.vet.hospital?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brandGreen hover:text-white transition text-gray-300 text-xl"><i class="ph-fill ph-tiktok-logo"></i></a>
+                    <a href="https://www.facebook.com/share/198oStqdX2/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="tap-scale w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brandGreen hover:text-white transition text-gray-300 text-xl"><i class="ph-fill ph-facebook-logo"></i></a>
+                    <a href="https://www.instagram.com/asia_vet_hospital?igsh=andrZW14bWptYnJk" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="tap-scale w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brandGreen hover:text-white transition text-gray-300 text-xl"><i class="ph-fill ph-instagram-logo"></i></a>
+                    <a href="https://www.tiktok.com/@asia.vet.hospital?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="tap-scale w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brandGreen hover:text-white transition text-gray-300 text-xl"><i class="ph-fill ph-tiktok-logo"></i></a>
                 </div>
             </div>
 
