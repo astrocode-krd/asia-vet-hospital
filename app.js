@@ -62,7 +62,7 @@ const translations = {
         /* Work Page */
         "work-page-tag": "Gallery & News", "work-page-title": "Our Success Stories", "work-page-desc": "See the difference expert care makes with real results, before-and-afters, and clinic news.",
         "work1-title": "Dental Cleaning Success", "work1-desc": "A routine ultrasonic dental scaling brought this patient's smile back and prevented future gum disease.",
-        "work2-title": "Post-Surgery Recovery", "work2-desc": "Watch this brave patient walking comfortably just days after a complex orthopedic procedure.",
+        "work2-title": "cat grooming", "work2-desc": "grroming for a brave and calm patient by our expert baban ",
 
         /* Tech */
         "tech-page-tag": "Our Equipment", "tech-page-title": "Advanced Veterinary Technology", "tech-page-desc": "We invest in state-of-the-art medical equipment.",
@@ -109,9 +109,9 @@ const translations = {
         "groom1-role": "تووک بڕینی پیشەگەر", "groom1-desc": "پسپۆڕە لە توک بڕین و شۆردنی ئاژەڵان.",
         "groom2-role": "شارەزای چاودێری ئاژەڵان", "groom2-desc": "دڵنیابوون لەوەی ئاژەڵەکانتان بە جوانترین شێوە دەردەکەون.",
 
-        "work-page-tag": "وێنە و هەواڵەکان", "work-page-title": "چیرۆکە سەرکەوتووەکانمان", "work-page-desc": "جیاوازی چاودێری شارەزایانە ببینە لەگەڵ ئەنجامی ڕاستەقینە و وێنەی پێش و پاش.",
+        "work-page-tag": "وێنە و هەواڵەکان", "work-page-title": "نمونەی کارەکانمان", "work-page-desc": "جیاوازی چاودێری شارەزایانە ببینە لەگەڵ ئەنجامی ڕاستەقینە و وێنەی پێش و پاش.",
         "work1-title": "سەرکەوتنی پاککردنەوەی ددان", "work1-desc": "پاککردنەوەیەکی ڕۆتینی ددان زەردەخەنەی ئەم نەخۆشەی گەڕاندەوە.",
-        "work2-title": "چاکبوونەوەی دوای نەشتەرگەری", "work2-desc": "سەیری ئەم نەخۆشە ئازایە بکە کە بە ئاسوودەیی دەڕوات دوای نەشتەرگەری.",
+        "work2-title": "تووک بڕین بۆ پشیلە", "work2-desc": "تووک بڕین بۆ پشیلەیەکی ئاقڵ لەلایەن کارمەندی نەخۆشخانەکەمان بابان.",
 
         "tech-page-tag": "ئامێرەکانمان", "tech-page-title": "تەکنەلۆژیای پێشکەوتوو", "tech-page-desc": "ئێمە وەبەرهێنان لە ئامێری پزیشکی سەردەمیانە دەکەین.",
         "tech1-title": "ئامێری شیکاری خوێن (CBC)", "tech1-desc": "ئامێرێکی تاقیگەییە کە شیکاری بۆ نموونەی خوێن دەکات. پێوانەی خڕۆکە سوورەکان، خڕۆکە سپییەکان، هیمۆگڵۆبین، هیماتۆکریت، و خەپلەکانی خوێن دەکات بۆ یارمەتیدان لە دەستنیشانکردنی هەوکردن، کەمخوێنی، و نەخۆشییەکانی خوێن.",
